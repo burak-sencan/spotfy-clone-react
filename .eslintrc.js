@@ -14,6 +14,7 @@ module.exports = {
   plugins: ['react'],
   rules: {
     semi: ['error', 'never'],
+    'arrow-body-style': ['error', 'as-needed'],
     'jsx-quotes': ['error', 'prefer-single'],
     'max-len': 0,
     'no-param-reassign': 0,
@@ -35,7 +36,16 @@ module.exports = {
     'no-underscore-dangle': [
       'error',
       {
-        allow: ['_d', '_dh', '_h', '_id', '_m', '_n', '_t', '_text'],
+        allow: [
+          '_d',
+          '_dh',
+          '_h',
+          '_id',
+          '_m',
+          '_n',
+          '_t',
+          '_text',
+        ],
       },
     ],
     'object-curly-newline': 0,

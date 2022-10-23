@@ -6,7 +6,7 @@ import { useGetTopChartsQuery } from '../redux/services/shazamCore'
 
 const Discover = () => {
   const dispatch = useDispatch()
-  const {isPlaying,activeSong} = useSelector((state) => state.player)
+  const { isPlaying, activeSong } = useSelector((state) => state.player)
 
   const { data, isFetching, error } = useGetTopChartsQuery()
   const genreTitle = 'Pop'
@@ -17,9 +17,7 @@ const Discover = () => {
   return (
     <div className='flex flex-col'>
       <div className='flex justify-between items-center w-full sm:-flex-row flex-col mt-4 mb-10'>
-        <h2 className='font-bold text-3xl text-white text-left'>
-          Discover {genreTitle}
-        </h2>
+        <h2 className='font-bold text-3xl text-white text-left'>Discover {genreTitle}</h2>
         <select
           onChange={() => {}}
           value=''
