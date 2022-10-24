@@ -1,7 +1,4 @@
-import {
-  createApi,
-  fetchBaseQuery,
-} from '@reduxjs/toolkit/query/react'
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 export const shazamCoreApi = createApi({
   reducerPath: 'shazamCoreApi',
@@ -21,12 +18,19 @@ export const shazamCoreApi = createApi({
       query: () => '/charts/world',
     }),
     getSongDetails: builder.query({
-      query: ({ songid }) =>
-        `/tracks/details?track_id=${songid}`,
+      query: ({ songid }) => `/tracks/details?track_id=${songid}`,
     }),
     getSongRelated: builder.query({
-      query: ({ songid }) =>
-        `/tracks/related?track_id=${songid}`,
+      query: ({ songid }) => `/tracks/related?track_id=${songid}`,
+    }),
+    getArtistDetail: builder.query({
+      query: ({ artistId }) => `/artists/details?artist_id=${artistId}`,
+    }),
+    getSongsByCountry: builder.query({
+      query: ({ countryCode }) => `/charts/country?country_code=${countryCode}`,
+    }),
+    getSongsBySearch: builder.query({
+      query: ({ searchTerm }) => `/search?term=${searchTerm}`,
     }),
   }),
 })
@@ -35,4 +39,7 @@ export const {
   useGetTopChartsQuery,
   useGetSongDetailsQuery,
   useGetSongRelatedQuery,
+  useGetArtistDetailQuery,
+  useGetSongsByCountryQuery,
+  useGetSongsBySearchQuery,
 } = shazamCoreApi
